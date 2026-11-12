@@ -53,4 +53,3 @@ Using JSON Schema with Ollama helped the model generate outputs that matched the
 
 ## Implementation Note
 This project uses Ollama's JSON Schema structured output feature through the `format` parameter. This demonstrates schema-constrained generation; explicit FSM decoding has not been independently verified.
-# AI-Engineering-Milestone-3
