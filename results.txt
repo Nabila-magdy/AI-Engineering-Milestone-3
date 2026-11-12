@@ -1,0 +1,84 @@
+Milestone 3 - Benchmark Results
+Unconstrained Results:
+
+Generated Data:
+```json
+{
+  "station": "El Qanater station",
+  "location": "Qalyubia",
+  "water_level": 16.5,
+  "date": "2026-11-10"
+}
+```
+Error: 2 validation errors for WaterStation
+station_name
+  Field required [type=missing, input_value={'station': 'El Qanater s...5, 'date': '2026-11-10'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing
+governorate
+  Field required [type=missing, input_value={'station': 'El Qanater s...5, 'date': '2026-11-10'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing
+
+Generated Data:
+```json
+{
+  "station": "El Qanater",
+  "location": "Qalyubia",
+  "water_level": 16.5
+}
+```
+Error: 3 validation errors for WaterStation
+station_name
+  Field required [type=missing, input_value={'station': 'El Qanater',...a', 'water_level': 16.5}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing
+governorate
+  Field required [type=missing, input_value={'station': 'El Qanater',...a', 'water_level': 16.5}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing
+date
+  Field required [type=missing, input_value={'station': 'El Qanater',...a', 'water_level': 16.5}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing
+
+Generated Data:
+```json
+{
+  "station_name": "El Qanater station",
+  "location": "Qalyubia",
+  "water_level": 16.5,
+  "date": "2026-11-10"
+}
+```
+Error: 1 validation error for WaterStation
+governorate
+  Field required [type=missing, input_value={'station_name': 'El Qana...5, 'date': '2026-11-10'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing
+Latency: 14.44 seconds
+Tokens/sec: 9.74
+Schema Validation Error Rate: 100.0 %
+
+Constrained Results:
+
+Generated Data:
+{
+  "station_name": "El Qanater",
+  "governorate": "Qalyubia",
+  "water_level": 16.5,
+  "date": "2026-11-10"
+}
+
+Generated Data:
+{
+  "station_name": "El Qanater",
+  "governorate": "Qalyubia",
+  "water_level": 16.5,
+  "date": "2026-11-10"
+}
+
+Generated Data:
+{
+  "station_name": "El Qanater station",
+  "governorate": "Qalyubia",
+  "water_level": 16.5,
+  "date": "2026-11-10"
+}
+Latency: 8.35 seconds
+Tokens/sec: 9.02
+Schema Validation Error Rate: 0.0 %
